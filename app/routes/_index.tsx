@@ -1,6 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
 
-import MyApp from "~/components";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,6 +10,6 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <MyApp />
+    <h1> Hellow World! </h1>
   )
 }
