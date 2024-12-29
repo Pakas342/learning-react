@@ -1,10 +1,4 @@
-export interface pizzaObject {
-  name: string,
-  ingrediients: string,
-  price: number,
-  photoName: string,
-  soldOut: boolean
-}
+import { pizzaObject } from "app/data/types/pizzaMenu"
 
 export function PizzaCard({ pizza, onSoldOut }: { pizza: pizzaObject, onSoldOut: () => void }) {
   return (
@@ -12,10 +6,10 @@ export function PizzaCard({ pizza, onSoldOut }: { pizza: pizzaObject, onSoldOut:
       <img src={pizza.photoName} />
       <div>
         <h3>{pizza.name}</h3>
-        <p>{pizza.ingrediients}</p>
+        <p>{pizza.ingredients}</p>
         <p>{pizza.soldOut ? "Sold Out" : pizza.price}</p>
+        <button onClick={onSoldOut} disabled={pizza.soldOut}>Order Pizza</button>
       </div>
-      <button onClick={onSoldOut} disabled={pizza.soldOut}>Order Pizza</button>
     </div >
   )
 }
